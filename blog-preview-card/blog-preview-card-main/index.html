@@ -59,6 +59,7 @@
       }
 
       .card {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 24px;
@@ -70,6 +71,14 @@
         border-radius: 20px;
 
         box-shadow: 8px 8px black;
+
+        transition: transform 300ms ease-in, box-shadow 300ms ease-in;
+      }
+
+      .card:hover {
+        transform: translateX(10px);
+        transform: translateY(10px);
+        box-shadow: -8px 8px 10px black;
       }
 
       .pic__illustration-article {

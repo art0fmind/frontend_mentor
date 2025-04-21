@@ -87,3 +87,49 @@ Avec plaisir ! On va décortiquer ton `<head>` ligne par ligne, en t'expliquant 
 ---
 
 Si tu veux, je peux aussi t’expliquer ce que tu pourrais **ajouter** dans le `<head>` pour booster ton SEO, améliorer le partage sur les réseaux sociaux (balises `og:`), ou améliorer l'accessibilité. Tu veux ?
+
+---
+
+La propriété CSS `font-optical-sizing: auto;` permet d'activer ou de désactiver **l'ajustement optique de la taille de police** lorsque la police utilisée le supporte. C’est une propriété **peu connue mais très utile** pour obtenir un rendu typographique plus raffiné.
+
+---
+
+### 🔎 En détail :
+
+#### 📌 Définition :
+
+```css
+font-optical-sizing: auto;
+```
+
+- `auto` : **active** l’ajustement optique **si la police le permet**. Cela signifie que la forme des lettres s’adapte légèrement en fonction de leur taille pour améliorer la lisibilité.
+- `none` : **désactive** cet ajustement même si la police le supporte.
+
+---
+
+Assez courant
+
+```
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+html, body{
+        height: 100vh;
+}
+
+body {
+        font-size: 16px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-optical-sizing: auto;
+}
+
+balise {
+        line-height: 150%;
+        letter-spacing: 0.2px;
+}
+
+```

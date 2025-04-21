@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Social links profile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Figtree:ital,wght@0,300..900;1,300..900&family=Geist+Mono:wght@100..900&family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="art0fmind" content="https://www.github.com/art0fmind/" />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --green: hsl(75, 94%, 57%);
+        --white: hsl(0, 0%, 100%);
+
+        --grey-700: hsl(0, 0%, 20%);
+        --grey-800: hsl(0, 0%, 12%);
+        --grey-900: hsl(0, 0%, 8%);
+
+        --font-size-paragraph: 14px;
+        --font-family-paragraph: "Inter", sans-serif;
+        --font-weight-paragragh: 400;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100vh;
+      }
+
+      body {
+        font-family: var(--font-family-paragraph);
+        font-size: var(--font-size-paragraph);
+        font-weight: var(--font-weight-paragragh);
+        font-optical-sizing: auto;
+
+        display: flex;
+
+        background-color: var(--grey-900);
+        color: var(--white);
+      }
+
+      .card__container {
+        margin: auto;
+        padding: 0 20px;
+
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .card {
+        padding: 30px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 18px;
+
+        background-color: var(--grey-800);
+        border-radius: 10px;
+
+        position: relative;
+        border: 1px solid transparent;
+        transition: all 400ms ease-in;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        border: 1px solid white;
+        box-shadow: 0 0 12px 1px white;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .avatar {
+        width: 90px;
+        height: 90px;
+
+        display: block;
+
+        border-radius: 50%;
+      }
+
+      .address-name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+      }
+
+      .address {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--green);
+      }
+
+      .name {
+        font-weight: 700;
+      }
+
+      .description {
+        font-size: 12px;
+      }
+
+      .socials {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .socials a {
+        width: 100%;
+        height: fit-content;
+      }
+
+      .socials__button {
+        width: 100%;
+        height: 34px;
+
+        font-weight: 700;
+        color: var(--white);
+
+        border: none;
+        border-radius: 7px;
+        background-color: var(--grey-700);
+
+        transition: all 200ms ease-in;
+      }
+
+      .socials__button:hover {
+        color: var(--grey-800);
+        background-color: var(--green);
+      }
+
+      @media (max-width: 320px) {
+        .card__container {
+          width: 100%;
+          max-width: 320px;
+        }
+        .name {
+          font-size: 20px;
+        }
+        .address {
+          font-size: 11px;
+        }
+        .description {
+          font-size: 11px;
+        }
+        .socials__button {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card__container">
+      <article class="card">
+        <div class="hero">
+          <figure class="avatar__container">
+            <img
+              src="./assets/images/avatar-art0fmind.png"
+              alt="avatar-art0fmind"
+              class="avatar"
+            />
+          </figure>
+
+          <div class="address-name">
+            <h1 class="name">Art0fmind</h1>
+            <p class="address">Kumasi, Ghana</p>
+          </div>
+
+          <p class="description">"Front-end developer and avid reader."</p>
+        </div>
+        <div class="socials">
+          <a href=""
+            ><button class="socials__button socials__button-github">
+              GitHub
+            </button></a
+          >
+          <a href=""
+            ><button class="socials__button socials__button-frontend-mentor">
+              Frontend Mentor
+            </button></a
+          >
+          <a href=""
+            ><button class="socials__button socials__button-linkedin">
+              LinkedIn
+            </button></a
+          >
+          <a href=""
+            ><button class="socials__button socials__button-figma">
+              Figma
+            </button></a
+          >
+          <a href=""
+            ><button class="socials__button socials__button-facebook">
+              Facebook
+            </button></a
+          >
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

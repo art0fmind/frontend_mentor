@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - URL de la solution : [URL de la solution ici](https://www.github.com/art0fmind/frontend_mentor/tree/main/social-links-profile/social-links-profile-main)
-- URL du site en ligne : [URL du site en ligne ici](https://art0fmind.github.oi/frontend_mentor/social-links-profile/social-links-profile-main)
+- URL du site en ligne : [URL du site en ligne ici](https://art0fmind.github.io/frontend_mentor/social-links-profile/social-links-profile-main)
 
 ## My process
 

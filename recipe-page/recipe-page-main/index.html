@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Recipe page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100..800&family=Figtree:ital,wght@0,300..900;1,300..900&family=Geist+Mono:wght@100..900&family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta name="art0fmind" content="https://www.github.com/art0fmind/" />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      /*-----begin Generic CSS-------------------------------------------*/
+      :root {
+        --white: hsl(0, 0%, 100%);
+        --stone-100: hsl(30, 54%, 90%);
+        --stone-150: hsl(30, 18%, 87%);
+        --stone-600: hsl(30, 10%, 34%);
+        --stone-900: hsl(24, 5%, 18%);
+        --brown-800: hsl(14, 45%, 36%);
+        --rose-800: hsl(332, 51%, 32%);
+        --rose-50: hsl(330, 100%, 98%);
+
+        --font-size-paragraph: 15px;
+
+        --young-serif-font: "Young Serif", sans-serif;
+        --young-serif-font-weight-400: 400;
+
+        --outfit-font: "Outfit", sans-serif;
+        --outfit-font-weight-400: 400;
+        --outfit-font-weight-600: 600;
+        --outfit-font-weight-700: 700;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-optical-sizing: auto;
+        color: var(--stone-900);
+      }
+
+      html,
+      body {
+        height: 100vh;
+      }
+
+      body {
+        font-family: var(--outfit-font);
+        font-size: var(--font-size-paragraph);
+        font-weight: 400;
+        background-color: var(--stone-100);
+
+        display: flex;
+      }
+
+      ul,
+      ol {
+        list-style-position: inside;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-family: var(--young-serif-font);
+        font-weight: 400;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        font-family: var(--young-serif-font);
+        font-weight: 400;
+        color: var(--brown-800);
+      }
+
+      /*-----end Generic CSS-------------------------------------------*/
+
+      /*-----begin text style------------------------------------------*/
+      .preparation-time__items span,
+      .instructions__items span,
+      .nutrition__table-data {
+        font-weight: bold;
+      }
+      .preparation-time__title {
+        font-family: var(--outfit-font);
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--rose-800);
+      }
+
+      /*-----end text style--------------------------------------------*/
+
+      /*-----begin block sizing, coloring, etc. -----------------------*/
+      .card__container {
+        margin: auto;
+        padding: 120px 20px;
+
+        width: 100%;
+        max-width: 730px;
+      }
+
+      .card {
+        border-radius: 25px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 30px;
+
+        background-color: var(--white);
+      }
+
+      .full__container {
+        padding-bottom: 25px;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 30px;
+      }
+
+      .pic__container {
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        width: fit-content;
+        height: fit-content;
+      }
+
+      .pic {
+        width: 100%;
+        height: auto;
+
+        border-radius: 15px;
+      }
+
+      .description__container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .description {
+        line-height: 1.5;
+      }
+
+      .preparation-time__container {
+        padding: 28px;
+        border-radius: 15px;
+        background-color: var(--rose-50);
+
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .preparation-time {
+        padding-left: 0.4em;
+        list-style: none;
+      }
+      .preparation-time__items {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        margin-bottom: 0.1em;
+      }
+
+      .preparation-time__items::before {
+        content: "•";
+        color: var(--rose-800);
+        font-size: 1.5em;
+        justify-self: center;
+        align-self: center;
+        padding-right: 1em;
+      }
+
+      .ingredients__container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .ingredients {
+        list-style: none;
+        padding: 0px 0.4em;
+      }
+
+      .ingredients__items {
+        /*line-height: 1.4;*/
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        margin-bottom: 0.1em;
+      }
+
+      .ingredients__items::before {
+        content: "•";
+        color: var(--brown-800);
+        font-size: 1.5em;
+        justify-self: center;
+        align-self: center;
+        padding-right: 1.2em;
+      }
+
+      .instructions__container {
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        padding: 30px 0px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .instructions {
+        counter-reset: li;
+        list-style: none;
+        padding: 0px 0.4em;
+      }
+      .instructions__items {
+        display: grid;
+        grid-template-columns: 2em 1fr;
+        align-items: start;
+        margin-bottom: 1em;
+      }
+      .instructions__items::before {
+        counter-increment: li;
+        content: counter(li) ".";
+        font-weight: 600;
+        color: var(--brown-800);
+        padding-right: 0.5em;
+      }
+
+      .nutrition__container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .nutrition__table {
+        border-collapse: collapse;
+      }
+      .nutrition__table-rows {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      }
+      .nutrition__table-rows:last-child {
+        border-bottom: none;
+      }
+      .nutrition__table-rows td {
+        padding: 0.8em 1.9em;
+      }
+      .nutrition__table-data {
+        color: var(--brown-800);
+      }
+      /*-----end block sizing, coloring, etc. -------------------------*/
+
+      /*-----begin responsive -----------------------------------------*/
+      @media (max-width: 425px) {
+        .card__container {
+          padding: 0px;
+        }
+        .card {
+          border-radius: 0px;
+        }
+        .pic__container {
+          padding: 0px;
+
+          width: fit-content;
+          height: fit-content;
+        }
+        .pic {
+          border-radius: 0px;
+        }
+        .title {
+          font-size: 35px;
+          line-height: 100%;
+        }
+        ol {
+          list-style-position: inside;
+        }
+      }
+      /*-----End responsive -------------------------------------------*/
+    </style>
+  </head>
+  <body>
+    <main class="card__container">
+      <article class="card">
+        <figure class="pic__container">
+          <img
+            src="./assets/images/image-omelette.jpeg"
+            alt="image-omelette"
+            class="pic"
+          />
+        </figure>
+
+        <section class="full__container">
+          <div class="description__container">
+            <h1 class="title">Simple Omelette Recipe</h1>
+            <p class="description">
+              An easy and quick dish, perfect for any meal. This classic
+              omelette combines beaten eggs cooked to perfection, optionally
+              filled with your choice of cheese, vegetables, or meats.
+            </p>
+          </div>
+          <div class="preparation-time__container">
+            <h2 class="preparation-time__title">Preparation time</h2>
+            <ul class="preparation-time">
+              <li class="preparation-time__items">
+                <div><span>Total</span>: Approximately 10 minutes</div>
+              </li>
+              <li class="preparation-time__items">
+                <div><span>Preparation</span>: 5 minutes</div>
+              </li>
+              <li class="preparation-time__items">
+                <div><span>Cooking</span>: 5 minutes</div>
+              </li>
+            </ul>
+          </div>
+          <div class="ingredients__container">
+            <h2 class="ingredients__title">Ingredients</h2>
+            <ul class="ingredients">
+              <li class="ingredients__items">2-3 large eggs</li>
+              <li class="ingredients__items">Salt, to taste</li>
+              <li class="ingredients__items">Pepper, to taste</li>
+              <li class="ingredients__items">1 tablespoon of butter or oil</li>
+              <li class="ingredients__items">
+                Optional fillings: cheese, diced vegetables, cooked meats, herbs
+              </li>
+            </ul>
+          </div>
+
+          <div class="instructions__container">
+            <h2 class="instructions__title">Instructions</h2>
+            <ol class="instructions">
+              <li class="instructions__items">
+                <div>
+                  <span>Beat the eggs</span>: In a bowl, beat the eggs with a
+                  pinch of salt and pepper until they are well mixed. You can
+                  add a tablespoon of water or milk for a fluffier texture.
+                </div>
+              </li>
+              <li class="instructions__items">
+                <div>
+                  <span>Heat the pan</span>: Place a non-stick frying pan over
+                  medium heat and add butter or oil.
+                </div>
+              </li>
+              <li class="instructions__items">
+                <div>
+                  <span>Cook the omelette</span>: Once the butter is melted and
+                  bubbling, pour in the eggs. Tilt the pan to ensure the eggs
+                  evenly coat the surface.
+                </div>
+              </li>
+              <li class="instructions__items">
+                <div>
+                  <span>Add fillings (optional)</span>: When the eggs begin to
+                  set at the edges but are still slightly runny in the middle,
+                  sprinkle your chosen fillings over one half of the omelette.
+                </div>
+              </li>
+              <li class="instructions__items">
+                <div>
+                  <span>Fold and serve</span>: As the omelette continues to
+                  cook, carefully lift one edge and fold it over the fillings.
+                  Let it cook for another minute, then slide it onto a plate.
+                </div>
+              </li>
+              <li class="instructions__items">
+                <div>
+                  <span>Enjoy</span>: Serve hot, with additional salt and pepper
+                  if needed.
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="nutrition__container">
+            <h2 class="nutrition__title">Nutrition</h2>
+            <p class="nutrition__description">
+              The table below shows nutritional values per serving without the
+              additional fillings.
+            </p>
+            <table class="nutrition__table">
+              <tr class="nutrition__table-rows">
+                <td>Calories</td>
+                <td class="nutrition__table-data">277kcal</td>
+              </tr>
+              <tr class="nutrition__table-rows">
+                <td>Carbs</td>
+                <td class="nutrition__table-data">0g</td>
+              </tr>
+              <tr class="nutrition__table-rows">
+                <td>Protein</td>
+                <td class="nutrition__table-data">20g</td>
+              </tr>
+              <tr class="nutrition__table-rows">
+                <td>Fat</td>
+                <td class="nutrition__table-data">22g</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

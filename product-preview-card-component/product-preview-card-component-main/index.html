@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Product preview card component</title>
+    <meta name="art0fmind" content="https://www.github.com/art0fmind/" />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --green-500: hsl(158, 36%, 37%);
+        --green-700: hsl(158, 42%, 18%);
+
+        --black: hsl(212, 21%, 14%);
+        --grey: hsl(228, 12%, 48%);
+        --cream: hsl(30, 38%, 92%);
+        --white: hsl(0, 0%, 100%);
+
+        --montserrat-font: "Montserrat", sans-serif;
+        --fraunces-font: "Fraunces", sans-serif;
+
+        /* font weights 500 et 700 */
+      }
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-optical-sizing: auto;
+      }
+      html,
+      body {
+        height: 100vh;
+      }
+      body {
+        font-size: 14px;
+        font-family: var(--montserrat-font);
+        font-weight: 500;
+        letter-spacing: 110%;
+
+        color: var(--grey);
+        background-color: var(--cream);
+
+        display: flex;
+      }
+
+      .container {
+        margin: auto;
+        width: fit-content;
+      }
+
+      .card {
+        display: flex;
+        width: 350px;
+
+        flex-direction: column;
+
+        border-radius: 1em;
+        overflow: hidden;
+        background-color: var(--white);
+
+        position: relative;
+
+        transition: all 200ms ease;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 5px 5px 15px var(--grey);
+      }
+
+      .image-product-desktop {
+        display: none;
+      }
+
+      .image-product-mobile {
+        display: block;
+        width: 350px;
+      }
+
+      /*-- if you touch next it so responcive it -----------------------------*/
+      .right-side {
+        padding: 1.8em;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1em;
+      }
+
+      .right-side__perfume {
+        font-family: var(--montserrat-font);
+      }
+      .right-side__title {
+        font-family: var(--fraunces-font);
+        font-size: 2.4em;
+
+        line-height: 100%;
+        color: var(--black);
+      }
+      .right-side__description {
+        font-size: 1em;
+        line-height: 150%;
+      }
+      .price {
+        display: flex;
+        align-items: center;
+        gap: 1.4em;
+      }
+      .new-price {
+        font-family: var(--fraunces-font);
+        font-size: 2.5em;
+        font-weight: 700;
+        color: var(--green-500);
+      }
+      .old-price {
+        text-decoration: line-through;
+      }
+      .addtocart {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7em;
+
+        padding: 1.3em;
+
+        border: none;
+        border-radius: 0.6em;
+        background-color: var(--green-500);
+
+        transition: background-color 200ms ease;
+      }
+      .addtocart:hover {
+        background-color: var(--green-700);
+      }
+      .addtocart__icon {
+        width: 15px;
+        height: 15px;
+      }
+      .addtocart__desc {
+        font-size: 1.1em;
+        font-weight: 700;
+        color: var(--white);
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          /*desktop*/
+          margin: auto;
+          width: 100%;
+          max-width: 660px;
+        }
+
+        .card {
+          /*desktop*/
+          display: flex;
+          flex-direction: row;
+
+          width: 100%;
+
+          border-radius: 1em;
+          overflow: hidden;
+          background-color: var(--white);
+        }
+
+        .image-product-desktop {
+          /*desktop*/
+          display: block;
+          height: 500px;
+        }
+        .image-product-mobile {
+          display: none;
+        }
+        .right-side {
+          padding: 2.6em;
+          gap: 0px;
+        }
+        .right-side__title {
+          font-size: 2.5em;
+        }
+        .right-side__description {
+          font-size: 1.07em;
+        }
+      }
+      @media (max-width: 320px) {
+        .image-product-mobile {
+          width: 310px;
+        }
+        .card {
+          width: 310px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <article class="card">
+        <figure class="container__image">
+          <img
+            src="images/image-product-desktop.jpg"
+            alt="image-product-desktop"
+            class="image-product-desktop"
+          />
+          <img
+            src="images/image-product-mobile.jpg"
+            alt="image-product-mobile"
+            class="image-product-mobile"
+          />
+        </figure>
+        <section class="right-side">
+          <p class="right-side__perfume">P E R F U M E</p>
+          <h1 class="right-side__title">Gabrielle Essence Eau De Parfum</h1>
+          <p class="right-side__description">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+          <div class="price">
+            <div class="new-price">$149.99</div>
+            <div class="old-price">$169.99</div>
+          </div>
+          <button class="addtocart">
+            <img
+              src="images/icon-cart.svg"
+              alt="icon-cart"
+              class="addtocart__icon"
+            />
+            <p class="addtocart__desc">Add to Cart</p>
+          </button>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

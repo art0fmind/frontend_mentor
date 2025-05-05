@@ -1,0 +1,9 @@
+li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+li::before {
+  content: "•";
+  padding-right: 0.5em;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-optical-sizing: auto;
+      }
+      html,
+      body {
+        height: 100vh;
+      }
+      body {
+        display: flex;
+      }
+      form {
+        margin: auto;
+        display: grid;
+        grid-template-columns: 7em 1fr;
+        gap: 10px;
+      }
+      .genre {
+        grid-column: span 2;
+        display: flex;
+        gap: 85px;
+      }
+      .message {
+        grid-column: span 2;
+      }
+
+      input,
+      select,
+      textarea {
+        border-radius: 7px;
+        border: 1px solid black;
+        padding: 3px 8px;
+      }
+      select {
+        width: fit-content;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="traitement.php" method="POST">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" required />
+
+      <!--  - -  -->
+
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required />
+
+      <!--  - -  -->
+
+      <label for="mdp">Mot de passe :</label>
+      <input type="password" id="mdp" name="mdp" required />
+
+      <!--  - -  -->
+
+      <label for="age">Age :</label>
+      <input type="number" id="age" name="age" min="1" max="120" />
+
+      <!--  - -  -->
+
+      <p class="genre">
+        <span>Sexe :</span>
+        <span>
+          <input type="radio" id="homme" name="sexe" value="homme" />
+          <label for="homme">Homme</label>
+
+          <input type="radio" id="femme" name="sexe" value="femme" />
+          <label for="femme">Femme</label>
+        </span>
+      </p>
+
+      <!--  - -  -->
+
+      <label for="pays">Pays :</label>
+      <select name="pays" id="pays">
+        <option value="fr">France</option>
+        <option value="be">Belgique</option>
+        <option value="ca">Canada</option>
+      </select>
+
+      <!--  - -  -->
+
+      <label for="message" class="message">Message :</label>
+      <textarea
+        name="message"
+        id="message"
+        rows="4"
+        cols="40"
+        class="message"
+      ></textarea>
+
+      <!--  - -  -->
+
+      <input type="submit" value="Envoyer" />
+
+      <!--  - -  -->
+    </form>
+  </body>
+</html>
